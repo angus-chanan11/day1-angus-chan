@@ -6,21 +6,18 @@ public class MultiplicationTableBuilder {
         MultiplicationTableBuilder builder = new MultiplicationTableBuilder();
         int start = 2;
         int end = 4;
-        boolean isStartLessThanOrEqualToEnd = builder.isStartLessThanOrEqualToEnd(start, end);
-        System.out.println(isStartLessThanOrEqualToEnd);
-        boolean isValidRange = builder.isValidRange(start, end);
-        System.out.println(isValidRange);
-        if (!isValidRange || !isStartLessThanOrEqualToEnd) {
-            System.out.println("");
-        } else {
-            String table = builder.printMultiplicationsInRange(start, end);
-            System.out.println(table);
-            System.out.println(builder.build(start, end));
-        }
+        System.out.println(builder.build(start, end));
     }
 
     public String build(int start, int end) {
-        return "";
+        boolean isStartLessThanOrEqualToEnd = isStartLessThanOrEqualToEnd(start, end);
+        boolean isValidRange = isValidRange(start, end);
+        if (!isValidRange || !isStartLessThanOrEqualToEnd) {
+            return null;
+        } else {
+            String table = printMultiplicationsInRange(start, end);
+            return table;
+        }
     }
 
     private boolean isStartLessThanOrEqualToEnd(int start, int end) {
