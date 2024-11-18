@@ -13,10 +13,8 @@ public class MultiplicationTableBuilder {
         if (!isValidRange || !isStartLessThanOrEqualToEnd) {
             System.out.println("");
         } else {
-            String multiplication = builder.printOneMultiplication(start, end);
-            System.out.println(multiplication);
-            String line = builder.printOneLineMultiplication(start, end);
-            System.out.println(line);
+            String table = builder.printMultiplicationsInRange(start, end);
+            System.out.println(table);
             System.out.println(builder.build(start, end));
         }
     }
@@ -48,5 +46,13 @@ public class MultiplicationTableBuilder {
         }
         line.append("\n");
         return line.toString();
+    }
+
+    private String printMultiplicationsInRange(int startNumber, int endNumber) {
+        StringBuilder multiplicationTable = new StringBuilder();
+        for (int multiplier = startNumber; multiplier <= endNumber; multiplier++) {
+            multiplicationTable.append(printOneLineMultiplication(startNumber, multiplier));
+        }
+        return multiplicationTable.toString();
     }
 }
