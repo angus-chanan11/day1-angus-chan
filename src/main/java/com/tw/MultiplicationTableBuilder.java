@@ -36,7 +36,8 @@ public class MultiplicationTableBuilder {
     private String printOneLineMultiplication(int startNumber, int endNumber) {
         StringBuilder line = new StringBuilder();
         for (int multiplicand = startNumber; multiplicand <= endNumber; multiplicand++) {
-            line.append(printOneMultiplication(multiplicand, endNumber));
+            String multiplication = printOneMultiplication(multiplicand, endNumber);
+            line.append(multiplication);
             if (endNumber != multiplicand) {
                 line.append(" ");
             }
