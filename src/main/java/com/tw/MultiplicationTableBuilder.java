@@ -33,7 +33,7 @@ public class MultiplicationTableBuilder {
         return String.format("%d*%d=%d", multiplicand, multiplier, multiplicand * multiplier);
     }
 
-    private String printOneLineMultiplication(int startNumber, int endNumber) {
+    private String generateOneLineMultiplication(int startNumber, int endNumber) {
         StringBuilder line = new StringBuilder();
         for (int multiplicand = startNumber; multiplicand <= endNumber; multiplicand++) {
             String multiplication = generateOneMultiplication(multiplicand, endNumber);
@@ -50,7 +50,7 @@ public class MultiplicationTableBuilder {
     private String printMultiplicationsInRange(int startNumber, int endNumber) {
         StringBuilder multiplicationTable = new StringBuilder();
         for (int multiplier = startNumber; multiplier <= endNumber; multiplier++) {
-            multiplicationTable.append(printOneLineMultiplication(startNumber, multiplier));
+            multiplicationTable.append(generateOneLineMultiplication(startNumber, multiplier));
         }
         return multiplicationTable.toString();
     }
