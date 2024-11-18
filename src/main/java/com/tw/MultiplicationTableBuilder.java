@@ -15,6 +15,8 @@ public class MultiplicationTableBuilder {
         } else {
             String multiplication = builder.printOneMultiplication(start, end);
             System.out.println(multiplication);
+            String line = builder.printOneLineMultiplication(start, end);
+            System.out.println(line);
             System.out.println(builder.build(start, end));
         }
     }
@@ -34,5 +36,17 @@ public class MultiplicationTableBuilder {
 
     private String printOneMultiplication(int multiplicand, int multiplier) {
         return String.format("%d*%d=%d", multiplicand, multiplier, multiplicand * multiplier);
+    }
+
+    private String printOneLineMultiplication(int startNumber, int endNumber) {
+        StringBuilder line = new StringBuilder();
+        for (int multiplicand = startNumber; multiplicand <= endNumber; multiplicand++) {
+            line.append(printOneMultiplication(multiplicand, endNumber));
+            if (endNumber != multiplicand) {
+                line.append(" ");
+            }
+        }
+        line.append("\n");
+        return line.toString();
     }
 }
