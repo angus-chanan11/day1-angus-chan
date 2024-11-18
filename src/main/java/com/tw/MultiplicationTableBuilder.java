@@ -15,7 +15,7 @@ public class MultiplicationTableBuilder {
         if (!isValidRange || !isStartLessThanOrEqualToEnd) {
             return null;
         } else {
-            String table = printMultiplicationsInRange(start, end);
+            String table = generateMultiplicationsInRange(start, end);
             return table;
         }
     }
@@ -47,7 +47,7 @@ public class MultiplicationTableBuilder {
         return line.toString();
     }
 
-    private String printMultiplicationsInRange(int startNumber, int endNumber) {
+    private String generateMultiplicationsInRange(int startNumber, int endNumber) {
         StringBuilder multiplicationTable = new StringBuilder();
         for (int multiplier = startNumber; multiplier <= endNumber; multiplier++) {
             multiplicationTable.append(generateOneLineMultiplication(startNumber, multiplier));
