@@ -29,19 +29,20 @@ public class MultiplicationTableBuilder {
                 endNumber > 1 && endNumber <= 1000;
     }
 
-    private String printOneMultiplication(int multiplicand, int multiplier) {
+    private String generateOneMultiplication(int multiplicand, int multiplier) {
         return String.format("%d*%d=%d", multiplicand, multiplier, multiplicand * multiplier);
     }
 
     private String printOneLineMultiplication(int startNumber, int endNumber) {
         StringBuilder line = new StringBuilder();
         for (int multiplicand = startNumber; multiplicand <= endNumber; multiplicand++) {
-            String multiplication = printOneMultiplication(multiplicand, endNumber);
+            String multiplication = generateOneMultiplication(multiplicand, endNumber);
             line.append(multiplication);
             if (endNumber != multiplicand) {
                 line.append(" ");
             }
         }
+
         line.append("\n");
         return line.toString();
     }
