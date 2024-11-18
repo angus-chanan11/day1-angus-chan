@@ -13,6 +13,8 @@ public class MultiplicationTableBuilder {
         if (!isValidRange || !isStartLessThanOrEqualToEnd) {
             System.out.println("");
         } else {
+            String multiplication = builder.printOneMultiplication(start, end);
+            System.out.println(multiplication);
             System.out.println(builder.build(start, end));
         }
     }
@@ -28,5 +30,9 @@ public class MultiplicationTableBuilder {
     private boolean isValidRange(int startNumber, int endNumber) {
         return startNumber > 1 && startNumber <= 1000 &&
                 endNumber > 1 && endNumber <= 1000;
+    }
+
+    private String printOneMultiplication(int multiplicand, int multiplier) {
+        return String.format("%d*%d=%d", multiplicand, multiplier, multiplicand * multiplier);
     }
 }
