@@ -10,6 +10,11 @@ public class MultiplicationTableBuilder {
         System.out.println(isStartLessThanOrEqualToEnd);
         boolean isValidRange = builder.isValidRange(start, end);
         System.out.println(isValidRange);
+        if (!isValidRange || !isStartLessThanOrEqualToEnd) {
+            System.out.println("");
+        } else {
+            System.out.println(builder.build(start, end));
+        }
     }
 
     public String build(int start, int end) {
